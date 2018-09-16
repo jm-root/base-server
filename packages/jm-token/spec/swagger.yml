@@ -1,0 +1,132 @@
+openapi: 3.0.0
+# Added by API Auto Mocking Plugin
+servers:
+  - description: SwaggerHub API Auto Mocking
+    url: https://virtserver.swaggerhub.com/jm-root/jm-token/1.0.0
+info:
+  version: "1.0.0"
+  title: jm-token-api
+  description: 单点登陆系统API
+paths:
+  /signon:
+    post:
+      description: 登记
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SignInfo'
+      responses:
+        '200':
+          description: 登记成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TokenInfo'
+  /signout:
+    get:
+      description: 登出
+      parameters:
+        - name: token
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: 登出成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserInfo'
+  /signout/{id}:
+    get:
+      description: 登出指定id的所有token
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: token
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: 登出成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserInfo'
+  /verify:
+    get:
+      description: 查询是否有效登记
+      parameters:
+        - name: token
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: 查询结果
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TokenInfo'
+  /touch:
+    get:
+      description: 延长token过期时间
+      parameters:
+        - name: token
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: 结果
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TokenInfo'
+components:
+  schemas:
+    SignInfo:
+      type: object
+      properties:
+        id:
+          type: string
+          example: '596d5cb3baeeaf00203de4ec'
+        expire:
+          type: integer
+          format: int32
+          example: 0
+      description: Token信息
+    TokenInfo:
+      type: object
+      properties:
+        id:
+          type: string
+          example: '596d5cb3baeeaf00203de4ec'
+        token:
+          type: string
+          example: '3a90dd3a53914eae857793297738574a85ae74e5914fce723b9dc82d562a31cf'
+        expire:
+          type: integer
+          format: int32
+          example: 3600
+        time:
+          type: integer
+          format: int64
+          example: 1524634308844
+      description: Token信息
+    UserInfo:
+      type: object
+      properties:
+        id:
+          type: string
+          example: '596d5cb3baeeaf00203de4ec'
+      description: 用户信息

@@ -1,0 +1,37 @@
+{
+  "name": "jm-token",
+  "version": "0.0.1",
+  "description": "general token service",
+  "main": "./lib/index",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jm-root/base-server.git"
+  },
+  "keywords": [
+    "javascript",
+    "token"
+  ],
+  "author": {
+    "name": "Jeff YU"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jm-root/base-server/issues"
+  },
+  "homepage": "https://github.com/jm-root/base-server",
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "jm-ms-help": "^2.0.1",
+    "jm-ms-wrapper": "^1.0.1",
+    "redis": "^2.7.1"
+  },
+  "devDependencies": {
+    "jest": "^22.4.3"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}
