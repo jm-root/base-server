@@ -25,11 +25,9 @@ module.exports = function (service, opts = {}) {
   let router = ms.router()
   router
     .add('/', 'post', create)
-    .add('/:id', 'post', create)
     .add('/:token', 'get', verify)
     .add('/:token', 'put', touch)
     .add('/:token', 'delete', del)
-    .add('/:id/:token', 'get', verify)
 
   return router
 }
