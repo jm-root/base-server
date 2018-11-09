@@ -19,11 +19,21 @@
       ]
     },
     {
+      "type": "dateFile",
+      "filename": "logs/log",
+      "pattern": "-yyyyMMdd.log",
+      "alwaysIncludePattern": true,
+      "category": [
+        "log"
+      ]
+    },
+    {
       "type": "console"
     }
   ],
   "replaceConsole": true,
   "levels": {
-    "token": "info"
+    "token": "info",
+    "log": "info"
   }
 }

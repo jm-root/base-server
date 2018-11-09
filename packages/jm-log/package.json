@@ -1,0 +1,39 @@
+{
+  "name": "jm-log",
+  "version": "0.0.0",
+  "description": "general log service",
+  "main": "./lib/index",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jm-root/base-server.git"
+  },
+  "keywords": [
+    "javascript",
+    "log"
+  ],
+  "author": {
+    "name": "Jeff YU"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jm-root/base-server/issues"
+  },
+  "homepage": "https://github.com/jm-root/base-server",
+  "dependencies": {
+    "jm-dao": "^1.0.5",
+    "jm-ms-mongoose": "^1.0.0",
+    "jm-ms-wrapper": "^1.0.1"
+  },
+  "devDependencies": {
+    "config": "^2.0.1",
+    "jest": "^22.4.3",
+    "jm-server": "^2.0.5",
+    "standard": "^12.0.1"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}
