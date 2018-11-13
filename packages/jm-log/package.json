@@ -23,14 +23,12 @@
   },
   "homepage": "https://github.com/jm-root/base-server",
   "dependencies": {
-    "jm-dao": "^1.0.5",
-    "jm-ms-mongoose": "^1.0.0",
-    "jm-ms-wrapper": "^1.0.1"
+    "jm-ms-mongoose": "^2.0.0",
+    "jm-ms-wrapper": "^1.0.1",
+    "mongoose": "^5.3.11"
   },
   "devDependencies": {
-    "config": "^2.0.1",
     "jest": "^22.4.3",
-    "jm-server": "^2.0.5",
     "standard": "^12.0.1"
   },
   "jest": {

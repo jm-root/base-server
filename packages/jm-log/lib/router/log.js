@@ -8,7 +8,7 @@ module.exports = function (service, opts = {}) {
   const list = opts.list || {
     conditions: {},
     options: {
-      sort: [{'crtime': -1}]
+      sort: '-crtime'
     }
   }
 

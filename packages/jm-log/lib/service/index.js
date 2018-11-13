@@ -1,4 +1,4 @@
-const jm = require('jm-dao')
+const mongoose = require('mongoose')
 const event = require('jm-event')
 const t = require('../locale')
 const log = require('./log')
@@ -10,19 +10,16 @@ class Service {
     this.t = t
 
     let cb = db => {
-      opts.db = db
       this.db = db
       this.log = log(this, opts)
       this.ready = true
       this.emit('ready')
     }
 
-    const db = opts.db
-    if (!db) {
-      jm.db.connect().then(cb)
-    } else if (typeof db === 'string') {
-      jm.db.connect(db).then(cb)
-    }
+    const {db = 'mongodb://localhost/local'} = opts
+    mongoose
+      .connect(db, {useNewUrlParser: true, useCreateIndex: true})
+      .then(cb)
 
     this.onReady()
   }
